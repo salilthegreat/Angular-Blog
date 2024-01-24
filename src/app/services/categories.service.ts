@@ -10,6 +10,6 @@ export class CategoriesService {
   constructor(private fireStore:Firestore) { }
   loadCategory(){
     const collectionRef = collection(this.fireStore,'Categories')
-    return collectionData(collectionRef)
+    return collectionData(collectionRef,{idField:'id'})
 }
 }

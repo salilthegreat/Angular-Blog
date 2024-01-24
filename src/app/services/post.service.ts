@@ -21,4 +21,10 @@ export class PostService {
     return collectionData(queryRef)
   }
 
+  loadIndividualCategoryPosts(categoryId:string){
+    const collectionRef = collection(this.fireStore,'Posts');
+    const queryRef = query(collectionRef,where('category.categoryId',"==",categoryId))
+    return collectionData(queryRef)
+  }
+
 }

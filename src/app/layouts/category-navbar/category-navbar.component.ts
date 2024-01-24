@@ -1,12 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from '../../services/categories.service';
+import { Observable } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-category-navbar',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './category-navbar.component.html',
   styleUrl: './category-navbar.component.css'
 })
-export class CategoryNavbarComponent {
+export class CategoryNavbarComponent implements OnInit {
+  categoryList!:Observable<any>
+  constructor(private categoryService:CategoriesService){
 
+  }
+
+  ngOnInit(): void {
+   this.categoryList =  this.categoryService.loadCategory()
+  }
 }

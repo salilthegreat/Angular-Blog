@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "past-echos": {
+      "hosting": {
+        "angular-blog": [
+          "past-echos"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "past-echos"
+  }
+}

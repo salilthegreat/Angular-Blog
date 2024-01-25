@@ -1,9 +1,9 @@
-<div class="card shaddow-effect" *ngIf="postData">
+<div class="card shaddow-effect" *ngIf="postData" [routerLink]="['/post',postData?.id]">
     <img [src]="postData.postImgPath">
     <div class="card-body">
         <small class="bg-light text-danger text-center d-block">{{postData.category.category}}</small>
         <div class="d-flex  justify-content-around">         
-            <small class="bg-light text-success text-center ">Featured</small>
+            <small class="bg-light text-success text-center" *ngIf="postData.isFeatured">Featured</small>
             <small class="bg-light text-info text-center ">Views - {{postData.views}}</small>
         </div>
         <h5 class="mt-1">{{postData.title | maxLength : 40}}</h5>

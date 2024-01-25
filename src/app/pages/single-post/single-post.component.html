@@ -1,34 +1,25 @@
-<div class="container">
+<div class="container" *ngIf="postDetails">
     <div class="row">
         <div class="col-md-9">
             <div class="card shaddow-effect">
-                <img src="https://images.pexels.com/photos/3126593/pexels-photo-3126593.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" class="card-img-top img-fluid" >
+                <img src='{{postDetails.postImgPath}}' alt="" class="card-img-top img-fluid" >
                 <div class="card-body">
-                    <small class="bg-light text-danger text-center">Design</small>
-                    <small class="bg-light text-success text-center ml-2">Featured</small>
-                    <small class="bg-light text-info text-center ml-2">Views - 200</small>
-                    <small class="bg-light text-warning text-center ml-2">Last Updated 21 Days Ago</small>
+                    <small class="bg-light text-danger text-center">{{postDetails.category.category}}</small>
+                    <small class="bg-light text-success text-center ml-2" *ngIf="postDetails.isFeatured">Featured</small>
+                    <small class="bg-light text-info text-center ml-2">Views - {{postDetails.views}}</small>
+                    <small class="bg-light text-warning text-center ml-2">Last Updated {{postDetails.createdAt.toDate() | date}}</small>
 
-                    <h1 class="mt-3 mb-3">How The Past Pillars Still Echos ?</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum dignissimos reiciendis suscipit? Vel molestias, veritatis quibusdam cumque reprehenderit laudantium non aperiam laborum quisquam unde nostrum ex minus a ipsa quis.
-                    Fugiat consectetur quae quia culpa aut ducimus dicta fuga aliquam consequatur, voluptas omnis assumenda soluta sit dignissimos saepe voluptate unde nihil sint veniam quas. Beatae ab veniam possimus earum facere.
-                    <br>
-                    <br>
-                    Cumque veniam, quam molestias natus a, odio exercitationem aliquid praesentium id deleniti itaque minus delectus ipsa optio quis atque incidunt, voluptates voluptate maxime quod non nemo. Saepe atque recusandae est.
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dignissimos tempore reprehenderit quasi adipisci sequi quo, asperiores quibusdam hic minima molestias rerum labore cum quaerat earum sunt consequatur deleniti eius eligendi?
-                    <br>
-                    <br>
-                    Distinctio sed doloribus nostrum maxime assumenda? Quis quam incidunt ipsa. Distinctio quod vitae tempore porro, iusto, vero in aliquam perspiciatis earum ipsa soluta? Mollitia aut eligendi eaque id doloribus! Autem.
-                </p>
+                    <h1 class="mt-3 mb-3">{{postDetails.title}}</h1>
+                    <p [innerHTML]="postDetails.content"></p>
                 </div>
             </div>
             <app-comment-form></app-comment-form>
             <app-comments-list></app-comments-list>
         </div>
         <div class="col-md-3">
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
-            <app-post-card></app-post-card>
+            <div *ngFor="let post of samePostArray ">
+                <app-post-card [postData]="post"></app-post-card>
+            </div>
         </div>
     </div>
 </div>

@@ -8,3 +8,21 @@ footer{
     font-size: 1.25rem;
 }
 
+@media screen and (max-width:786px) {
+    footer{
+        height: 70px;
+    }
+    .site-logo{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:480px) {
+    footer{
+        height: 50px;
+    }
+    .site-logo{
+        font-size: 1rem;
+    }
+}
+

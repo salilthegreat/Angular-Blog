@@ -7,3 +7,22 @@ img{
     height: 200px;
     object-fit: cover;
 }
+
+@media screen and (max-width:768px) {
+    .card{
+        /* max-width: 300px ; */
+        min-height: 400px;
+    }
+    
+    img{
+        height: 150px;
+        object-fit: cover;
+    }
+}
+
+@media screen and (max-width:10240px) {
+    .card{
+        max-width: 500px;
+    }
+}
+

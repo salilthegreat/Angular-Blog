@@ -7,7 +7,7 @@
             <small class="bg-light text-info text-center ">Views - {{postData.views}}</small>
         </div>
         <h5 class="mt-1">{{postData.title | maxLength : 40}}</h5>
-        <p>{{postData.excerpt | maxLength : 80}}</p>
+        <p>{{postData.excerpt | maxLength : 60}}</p>
         <small class="bg-light text-warning text-center "> Last Updated - {{postData.createdAt.toDate() | date}}</small>
     </div>
 </div>

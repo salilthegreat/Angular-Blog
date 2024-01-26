@@ -13,6 +13,7 @@ import {  RouterLink } from '@angular/router';
 })
 export class CategoryNavbarComponent implements OnInit {
   categoryList!:Observable<any>
+  toggle:boolean = false
   constructor(
     private categoryService:CategoriesService,
     ){
@@ -21,5 +22,9 @@ export class CategoryNavbarComponent implements OnInit {
 
   ngOnInit(): void {
    this.categoryList =  this.categoryService.loadCategory();
+  }
+
+  toggleMenu(){
+    this.toggle = !this.toggle
   }
 }

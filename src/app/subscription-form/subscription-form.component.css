@@ -6,3 +6,15 @@
 .subs-text{
     width: 500px;
 }
+
+@media screen and (max-width:786px) {
+    .subs-text{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .subs-text{
+        width: 200px;
+    }
+}

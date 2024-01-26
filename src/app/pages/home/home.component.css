@@ -4,3 +4,29 @@
     padding-right: 130px;
     padding-bottom: 130px;
 }
+
+
+
+@media screen and (max-width:768px) {
+    .featured-section{
+        background-color: var(--primary-color);
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 50px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .featured-section{
+        background-color: var(--primary-color);
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+    .center{
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

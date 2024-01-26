@@ -5,3 +5,21 @@ header{
 .site-logo{
     font-size: 1.5rem;
 }
+
+@media screen and (max-width:786px) {
+    header{
+        height: 70px;
+    }
+    .site-logo{
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width:480px) {
+    header{
+        height: 50px;
+    }
+    .site-logo{
+        font-size: 1rem;
+    }
+}
